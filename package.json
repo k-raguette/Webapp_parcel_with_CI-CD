@@ -4,14 +4,16 @@
     "lodash": "^4.17.21",
     "minimatch": "^9.0.3"
   },
-  "scripts": {},
+  "scripts": {
+    "build": "npx parcel build src/index.html --public-url /k-raguette",
+    "lint": "npx eslint src/.",
+    "test": "npx jest",
+    "deploy": "npm run build && npx gh-pages -d dist",
+    "ci": "npm run lint && npm run test && npm run deploy"
+  },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.10.3",
-    "eslint": "^8.56.0",
     "eslint-config-standard": "^17.1.0",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-n": "^16.4.0",
-    "eslint-plugin-promise": "^6.1.1",
     "jest-environment-jsdom": "^29.6.1"
   },
   "name": "capstone",
